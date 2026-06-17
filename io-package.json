@@ -1,0 +1,72 @@
+{
+  "common": {
+    "name": "advansol-optimizer",
+    "version": "0.1.1",
+    "news": {
+      "0.1.1": {
+        "en": "Added adapter icon and localized admin configuration labels",
+        "de": "Adapter-Icon und lokalisierte Admin-Konfiguration hinzugefuegt"
+      },
+      "0.1.0": {
+        "en": "Initial adapter version based on the existing ioBroker JavaScript optimizer script",
+        "de": "Erste Adapter-Version auf Basis des bestehenden ioBroker JavaScript-Optimierer-Skripts"
+      }
+    },
+    "titleLang": {
+      "en": "AdvanSol Optimizer",
+      "de": "AdvanSol Optimierer"
+    },
+    "desc": {
+      "en": "Reads and controls AdvanSol DCON-WIFI / MRO/MR optimizers via a TCP RS485 bridge.",
+      "de": "Liest und steuert AdvanSol DCON-WIFI / MRO/MR Optimierer ueber eine TCP-RS485-Bridge."
+    },
+    "authors": [
+      "ioBroker User"
+    ],
+    "keywords": [
+      "advansol",
+      "optimizer",
+      "solar",
+      "rs485",
+      "tcp"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "main": "main.js",
+    "icon": "advansol-optimizer.svg",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/your-name/ioBroker.advansol-optimizer/main/admin/advansol-optimizer.svg",
+    "readme": "https://github.com/your-name/ioBroker.advansol-optimizer/blob/main/README.md",
+    "loglevel": "info",
+    "mode": "daemon",
+    "type": "energy",
+    "compact": true,
+    "connectionType": "local",
+    "dataSource": "poll",
+    "adminUI": {
+      "config": "json"
+    },
+    "dependencies": [
+      {
+        "js-controller": ">=5.0.0"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=6.0.0"
+      }
+    ]
+  },
+  "native": {
+    "host": "192.168.2.156",
+    "tcpPort": 502,
+    "pollMs": 10000,
+    "requestTimeoutMs": 5000,
+    "switchRetries": 3,
+    "switchRetryDelayMs": 4100,
+    "nightStart": 22,
+    "nightEnd": 5
+  },
+  "objects": [],
+  "instanceObjects": []
+}

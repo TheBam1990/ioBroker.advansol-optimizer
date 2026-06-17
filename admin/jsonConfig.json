@@ -1,0 +1,121 @@
+{
+  "type": "panel",
+  "items": {
+    "host": {
+      "type": "text",
+      "label": {
+        "en": "Host",
+        "de": "Host"
+      },
+      "help": {
+        "en": "IP address or host name of the TCP RS485 bridge.",
+        "de": "IP-Adresse oder Hostname der TCP-RS485-Bridge."
+      },
+      "newLine": true,
+      "xs": 12,
+      "sm": 6
+    },
+    "tcpPort": {
+      "type": "number",
+      "label": {
+        "en": "TCP port",
+        "de": "TCP-Port"
+      },
+      "help": {
+        "en": "TCP port of the Waveshare ETH-to-RS485 bridge.",
+        "de": "TCP-Port der Waveshare ETH-to-RS485-Bridge."
+      },
+      "min": 1,
+      "max": 65535,
+      "xs": 12,
+      "sm": 6
+    },
+    "pollMs": {
+      "type": "number",
+      "label": {
+        "en": "Polling interval",
+        "de": "Abfrageintervall"
+      },
+      "help": {
+        "en": "Time between polling cycles in milliseconds.",
+        "de": "Zeit zwischen zwei Abfragen in Millisekunden."
+      },
+      "min": 1000,
+      "xs": 12,
+      "sm": 6
+    },
+    "requestTimeoutMs": {
+      "type": "number",
+      "label": {
+        "en": "Request timeout",
+        "de": "Anfrage-Timeout"
+      },
+      "help": {
+        "en": "Maximum wait time for a device response in milliseconds.",
+        "de": "Maximale Wartezeit auf eine Geräteantwort in Millisekunden."
+      },
+      "min": 500,
+      "xs": 12,
+      "sm": 6
+    },
+    "switchRetries": {
+      "type": "number",
+      "label": {
+        "en": "Switch retries",
+        "de": "Schaltversuche"
+      },
+      "help": {
+        "en": "Number of repeated switch commands.",
+        "de": "Anzahl der wiederholten Schaltbefehle."
+      },
+      "min": 1,
+      "max": 20,
+      "xs": 12,
+      "sm": 6
+    },
+    "switchRetryDelayMs": {
+      "type": "number",
+      "label": {
+        "en": "Switch retry delay",
+        "de": "Pause zwischen Schaltversuchen"
+      },
+      "help": {
+        "en": "Delay between switch retries in milliseconds.",
+        "de": "Pause zwischen Schaltversuchen in Millisekunden."
+      },
+      "min": 0,
+      "xs": 12,
+      "sm": 6
+    },
+    "nightStart": {
+      "type": "number",
+      "label": {
+        "en": "Night mode starts",
+        "de": "Nachtmodus beginnt"
+      },
+      "help": {
+        "en": "Hour when polling is skipped, from 0 to 23.",
+        "de": "Stunde, ab der nicht mehr abgefragt wird, von 0 bis 23."
+      },
+      "min": 0,
+      "max": 23,
+      "xs": 12,
+      "sm": 6
+    },
+    "nightEnd": {
+      "type": "number",
+      "label": {
+        "en": "Night mode ends",
+        "de": "Nachtmodus endet"
+      },
+      "help": {
+        "en": "Hour when polling resumes, from 0 to 23.",
+        "de": "Stunde, ab der wieder abgefragt wird, von 0 bis 23."
+      },
+      "min": 0,
+      "max": 23,
+      "xs": 12,
+      "sm": 6
+    }
+  }
+}

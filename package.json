@@ -1,0 +1,35 @@
+{
+  "name": "iobroker.advansol-optimizer",
+  "version": "0.1.1",
+  "description": "ioBroker adapter for AdvanSol DCON-WIFI / MRO/MR optimizers via TCP RS485 bridge",
+  "author": "ioBroker User",
+  "homepage": "https://github.com/your-name/ioBroker.advansol-optimizer",
+  "license": "MIT",
+  "main": "main.js",
+  "keywords": [
+    "iobroker",
+    "advansol",
+    "optimizer",
+    "solar",
+    "rs485"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-name/ioBroker.advansol-optimizer.git"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@iobroker/adapter-core": "^3.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node main.js",
+    "test": "node --check main.js"
+  },
+  "bugs": {
+    "url": "https://github.com/your-name/ioBroker.advansol-optimizer/issues"
+  },
+  "readmeFilename": "README.md"
+}

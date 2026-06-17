@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="AdvanSol Optimizer">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1d4ed8"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="24" y1="50" x2="101" y2="94" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#164e63"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="24" fill="url(#sky)"/>
+  <circle cx="91" cy="34" r="17" fill="#facc15"/>
+  <path d="M91 9v11M91 48v11M66 34h11M105 34h11M73 16l8 8M101 44l8 8M109 16l-8 8M81 44l-8 8" stroke="#fde68a" stroke-width="5" stroke-linecap="round"/>
+  <path d="M22 52h65c5 0 9 4 9 9v33H31c-5 0-9-4-9-9z" fill="url(#panel)"/>
+  <path d="M31 61h56M27 72h67M24 83h70M44 54l-13 39M62 53 49 94M80 54 67 94" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" opacity=".9"/>
+  <path d="M79 84h18l-7-12h17L86 107l6-17H76z" fill="#facc15" stroke="#fff7ad" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M22 102h84" stroke="#d1fae5" stroke-width="7" stroke-linecap="round" opacity=".9"/>
+</svg>
