@@ -34,7 +34,7 @@ class AdvansolOptimizer extends utils.Adapter {
 
     get cfg() {
         return {
-            host: String(this.config.host || "192.168.2.156"),
+            host: String(this.config.host || "").trim(),
             tcpPort: Number(this.config.tcpPort || 502),
             pollMs: Number(this.config.pollMs || 10000),
             requestTimeoutMs: Number(this.config.requestTimeoutMs || 5000),
@@ -50,6 +50,11 @@ class AdvansolOptimizer extends utils.Adapter {
         await this.setStateAsync("info.connection", false, true);
 
         try {
+            if (!this.cfg.host) {
+                this.log.warn("No TCP RS485 bridge host configured. Please enter the bridge IP address or host name in the adapter settings.");
+                return;
+            }
+
             await this.connectTcp();
             await this.poll();
             this.pollTimer = this.setInterval(() => void this.poll(), this.cfg.pollMs);

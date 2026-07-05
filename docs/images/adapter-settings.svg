@@ -5,7 +5,7 @@
   <text x="72" y="116" font-family="Arial, sans-serif" font-size="15" fill="#506274">TCP-Verbindung zur RS485-Bridge und Polling-Verhalten</text>
   <text x="82" y="168" font-family="Arial, sans-serif" font-size="15" fill="#4e5f70">Host / IP der Bridge</text>
   <rect x="82" y="182" width="330" height="40" rx="4" fill="#fff" stroke="#b9c6d3"/>
-  <text x="102" y="208" font-family="Arial, sans-serif" font-size="16" fill="#24384d">192.168.2.156</text>
+  <text x="102" y="208" font-family="Arial, sans-serif" font-size="16" fill="#24384d">bridge.local</text>
   <text x="458" y="168" font-family="Arial, sans-serif" font-size="15" fill="#4e5f70">TCP-Port</text>
   <rect x="458" y="182" width="160" height="40" rx="4" fill="#fff" stroke="#b9c6d3"/>
   <text x="478" y="208" font-family="Arial, sans-serif" font-size="16" fill="#24384d">502</text>

@@ -1,27 +1,50 @@
 {
   "common": {
     "name": "advansol-optimizer",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "news": {
-      "0.1.1": {
-        "en": "Added adapter icon and localized admin configuration labels",
-        "de": "Adapter-Icon und lokalisierte Admin-Konfiguration hinzugefuegt"
-      },
-      "0.1.0": {
-        "en": "Initial adapter version based on the existing ioBroker JavaScript optimizer script",
-        "de": "Erste Adapter-Version auf Basis des bestehenden ioBroker JavaScript-Optimierer-Skripts"
+      "0.1.2": {
+        "en": "Updates package metadata for ioBroker adapter checker compatibility",
+        "de": "Aktualisiert Paket-Metadaten fuer die Kompatibilitaet mit dem ioBroker Adapter-Checker",
+        "ru": "Updates package metadata for ioBroker adapter checker compatibility",
+        "pt": "Updates package metadata for ioBroker adapter checker compatibility",
+        "nl": "Updates package metadata for ioBroker adapter checker compatibility",
+        "fr": "Updates package metadata for ioBroker adapter checker compatibility",
+        "it": "Updates package metadata for ioBroker adapter checker compatibility",
+        "es": "Updates package metadata for ioBroker adapter checker compatibility",
+        "pl": "Updates package metadata for ioBroker adapter checker compatibility",
+        "uk": "Updates package metadata for ioBroker adapter checker compatibility",
+        "zh-cn": "Updates package metadata for ioBroker adapter checker compatibility"
       }
     },
     "titleLang": {
       "en": "AdvanSol Optimizer",
-      "de": "AdvanSol Optimierer"
+      "de": "AdvanSol Optimierer",
+      "ru": "AdvanSol Optimizer",
+      "pt": "AdvanSol Optimizer",
+      "nl": "AdvanSol Optimizer",
+      "fr": "AdvanSol Optimizer",
+      "it": "AdvanSol Optimizer",
+      "es": "AdvanSol Optimizer",
+      "pl": "AdvanSol Optimizer",
+      "uk": "AdvanSol Optimizer",
+      "zh-cn": "AdvanSol Optimizer"
     },
     "desc": {
       "en": "Reads and controls AdvanSol DCON-WIFI / MRO/MR optimizers via a TCP RS485 bridge.",
-      "de": "Liest und steuert AdvanSol DCON-WIFI / MRO/MR Optimierer ueber eine TCP-RS485-Bridge."
+      "de": "Liest und steuert AdvanSol DCON-WIFI / MRO/MR Optimierer ueber eine TCP-RS485-Bridge.",
+      "ru": "Reads and controls AdvanSol DCON-WIFI / MRO/MR optimizers via a TCP RS485 bridge.",
+      "pt": "Reads and controls AdvanSol DCON-WIFI / MRO/MR optimizers via a TCP RS485 bridge.",
+      "nl": "Reads and controls AdvanSol DCON-WIFI / MRO/MR optimizers via a TCP RS485 bridge.",
+      "fr": "Reads and controls AdvanSol DCON-WIFI / MRO/MR optimizers via a TCP RS485 bridge.",
+      "it": "Reads and controls AdvanSol DCON-WIFI / MRO/MR optimizers via a TCP RS485 bridge.",
+      "es": "Reads and controls AdvanSol DCON-WIFI / MRO/MR optimizers via a TCP RS485 bridge.",
+      "pl": "Reads and controls AdvanSol DCON-WIFI / MRO/MR optimizers via a TCP RS485 bridge.",
+      "uk": "Reads and controls AdvanSol DCON-WIFI / MRO/MR optimizers via a TCP RS485 bridge.",
+      "zh-cn": "Reads and controls AdvanSol DCON-WIFI / MRO/MR optimizers via a TCP RS485 bridge."
     },
     "authors": [
-      "ioBroker User"
+      "TheBam1990"
     ],
     "keywords": [
       "advansol",
@@ -30,16 +53,19 @@
       "rs485",
       "tcp"
     ],
-    "license": "MIT",
+    "licenseInformation": {
+      "type": "free",
+      "license": "MIT"
+    },
     "platform": "Javascript/Node.js",
-    "main": "main.js",
     "icon": "advansol-optimizer.svg",
     "enabled": true,
-    "extIcon": "https://raw.githubusercontent.com/your-name/ioBroker.advansol-optimizer/main/admin/advansol-optimizer.svg",
-    "readme": "https://github.com/your-name/ioBroker.advansol-optimizer/blob/main/README.md",
+    "extIcon": "https://raw.githubusercontent.com/TheBam1990/ioBroker.advansol-optimizer/main/admin/advansol-optimizer.svg",
+    "readme": "https://github.com/TheBam1990/ioBroker.advansol-optimizer/blob/main/README.md",
     "loglevel": "info",
     "mode": "daemon",
     "type": "energy",
+    "tier": 3,
     "compact": true,
     "connectionType": "local",
     "dataSource": "poll",
@@ -48,7 +74,7 @@
     },
     "dependencies": [
       {
-        "js-controller": ">=5.0.0"
+        "js-controller": ">=5.0.19"
       }
     ],
     "globalDependencies": [
@@ -58,7 +84,7 @@
     ]
   },
   "native": {
-    "host": "192.168.2.156",
+    "host": "",
     "tcpPort": 502,
     "pollMs": 10000,
     "requestTimeoutMs": 5000,

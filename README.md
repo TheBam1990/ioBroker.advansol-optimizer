@@ -43,7 +43,7 @@ Empfohlene Bridge-Einstellung:
 
 | Einstellung | Bedeutung | Standard |
 | --- | --- | --- |
-| `Host` | IP-Adresse oder Hostname der TCP-RS485-Bridge | `192.168.2.156` |
+| `Host` | IP-Adresse oder Hostname der TCP-RS485-Bridge | leer |
 | `TCP port` | TCP-Port der Bridge | `502` |
 | `Polling interval` | Zeit zwischen zwei Polling-Zyklen in Millisekunden | `10000` |
 | `Request timeout` | Maximale Wartezeit auf eine Antwort | `5000` |
@@ -99,7 +99,7 @@ Der Adapter wiederholt den Schaltbefehl entsprechend `Switch retries`. Zwischen 
 Aus einem lokalen Paket:
 
 ```bash
-iobroker url /path/to/iobroker.advansol-optimizer-0.1.1.tgz
+iobroker url /path/to/iobroker.advansol-optimizer-0.1.2.tgz
 ```
 
 Aus einem Projektordner:
@@ -155,7 +155,7 @@ Recommended bridge configuration:
 
 | Setting | Meaning | Default |
 | --- | --- | --- |
-| `Host` | IP address or host name of the TCP-RS485 bridge | `192.168.2.156` |
+| `Host` | IP address or host name of the TCP-RS485 bridge | empty |
 | `TCP port` | TCP port of the bridge | `502` |
 | `Polling interval` | Time between polling cycles in milliseconds | `10000` |
 | `Request timeout` | Maximum wait time for a response | `5000` |
@@ -209,7 +209,7 @@ The adapter repeats the command according to `Switch retries` and waits `Switch 
 From a local package:
 
 ```bash
-iobroker url /path/to/iobroker.advansol-optimizer-0.1.1.tgz
+iobroker url /path/to/iobroker.advansol-optimizer-0.1.2.tgz
 ```
 
 From a project folder:
@@ -231,6 +231,11 @@ After installation, create an instance, enter the bridge host/port and start the
 - Multiple systems on the bus: make sure there is not more than one active master sending frames.
 
 ## Changelog
+
+### 0.1.2
+
+- Updated package metadata for ioBroker adapter checker compatibility.
+- Added repository, testing, license information, tier and extended translations.
 
 ### 0.1.1
 
