@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "advansol-optimizer",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "news": {
+      "0.1.4": {
+        "en": "Publishes the adapter through the automated GitHub Actions release workflow with npm provenance",
+        "de": "Veroeffentlicht den Adapter ueber den automatisierten GitHub-Actions-Release-Workflow mit npm-Provenance",
+        "ru": "Публикует адаптер через автоматический релизный процесс GitHub Actions с npm provenance",
+        "pt": "Publica o adaptador pelo fluxo automatizado de lancamento do GitHub Actions com npm provenance",
+        "nl": "Publiceert de adapter via de geautomatiseerde GitHub Actions releaseworkflow met npm-provenance",
+        "fr": "Publie l'adaptateur via le workflow de version automatise GitHub Actions avec la provenance npm",
+        "it": "Pubblica l'adapter tramite il workflow di rilascio automatizzato di GitHub Actions con provenienza npm",
+        "es": "Publica el adaptador mediante el flujo automatizado de GitHub Actions con procedencia npm",
+        "pl": "Publikuje adapter przez zautomatyzowany workflow wydan GitHub Actions z npm provenance",
+        "uk": "Публікує адаптер через автоматизований релізний workflow GitHub Actions з npm provenance",
+        "zh-cn": "通过带有 npm provenance 的 GitHub Actions 自动发布流程发布适配器"
+      },
       "0.1.3": {
         "en": "Adds release automation, responsive admin configuration and repository metadata for ioBroker publication",
         "de": "Fuegt Release-Automatisierung, responsive Admin-Konfiguration und Repository-Metadaten fuer die ioBroker-Veroeffentlichung hinzu",

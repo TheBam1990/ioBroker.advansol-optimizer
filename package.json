@@ -1,6 +1,6 @@
 {
   "name": "iobroker.advansol-optimizer",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "ioBroker adapter for AdvanSol DCON-WIFI / MRO/MR optimizers via TCP RS485 bridge",
   "author": "TheBam1990",
   "homepage": "https://github.com/TheBam1990/ioBroker.advansol-optimizer",

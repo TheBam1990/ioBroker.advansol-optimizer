@@ -99,7 +99,7 @@ iobroker install iobroker.advansol-optimizer
 From a local package:
 
 ```bash
-iobroker url /path/to/iobroker.advansol-optimizer-0.1.3.tgz
+iobroker url /path/to/iobroker.advansol-optimizer-0.1.4.tgz
 ```
 
 From a project folder:
@@ -121,6 +121,10 @@ After installation, create an instance, enter the bridge host and port, and star
 - Multiple systems on the bus: make sure there is not more than one active master sending frames.
 
 ## Changelog
+
+### 0.1.4
+
+- Published through the automated GitHub Actions release workflow with npm provenance.
 
 ### 0.1.3
 
