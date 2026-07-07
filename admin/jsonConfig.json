@@ -1,5 +1,6 @@
 {
   "type": "panel",
+  "i18n": false,
   "items": {
     "host": {
       "type": "text",
@@ -13,7 +14,10 @@
       },
       "newLine": true,
       "xs": 12,
-      "sm": 6
+      "sm": 6,
+      "md": 6,
+      "lg": 4,
+      "xl": 4
     },
     "tcpPort": {
       "type": "number",
@@ -28,7 +32,10 @@
       "min": 1,
       "max": 65535,
       "xs": 12,
-      "sm": 6
+      "sm": 6,
+      "md": 6,
+      "lg": 4,
+      "xl": 4
     },
     "pollMs": {
       "type": "number",
@@ -42,7 +49,10 @@
       },
       "min": 1000,
       "xs": 12,
-      "sm": 6
+      "sm": 6,
+      "md": 6,
+      "lg": 4,
+      "xl": 4
     },
     "requestTimeoutMs": {
       "type": "number",
@@ -56,7 +66,10 @@
       },
       "min": 500,
       "xs": 12,
-      "sm": 6
+      "sm": 6,
+      "md": 6,
+      "lg": 4,
+      "xl": 4
     },
     "switchRetries": {
       "type": "number",
@@ -71,7 +84,10 @@
       "min": 1,
       "max": 20,
       "xs": 12,
-      "sm": 6
+      "sm": 6,
+      "md": 6,
+      "lg": 4,
+      "xl": 4
     },
     "switchRetryDelayMs": {
       "type": "number",
@@ -85,7 +101,10 @@
       },
       "min": 0,
       "xs": 12,
-      "sm": 6
+      "sm": 6,
+      "md": 6,
+      "lg": 4,
+      "xl": 4
     },
     "nightStart": {
       "type": "number",
@@ -100,7 +119,10 @@
       "min": 0,
       "max": 23,
       "xs": 12,
-      "sm": 6
+      "sm": 6,
+      "md": 6,
+      "lg": 4,
+      "xl": 4
     },
     "nightEnd": {
       "type": "number",
@@ -115,7 +137,10 @@
       "min": 0,
       "max": 23,
       "xs": 12,
-      "sm": 6
+      "sm": 6,
+      "md": 6,
+      "lg": 4,
+      "xl": 4
     }
   }
 }

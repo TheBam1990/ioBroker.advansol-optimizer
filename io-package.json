@@ -1,20 +1,24 @@
 {
   "common": {
     "name": "advansol-optimizer",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "news": {
+      "0.1.3": {
+        "en": "Adds release automation, responsive admin configuration and repository metadata for ioBroker publication",
+        "de": "Fuegt Release-Automatisierung, responsive Admin-Konfiguration und Repository-Metadaten fuer die ioBroker-Veroeffentlichung hinzu",
+        "ru": "Добавлена автоматизация релизов, адаптивная конфигурация администратора и метаданные репозитория для публикации ioBroker",
+        "pt": "Adiciona automacao de lancamento, configuracao administrativa responsiva e metadados do repositorio para publicacao no ioBroker",
+        "nl": "Voegt release-automatisering, responsieve adminconfiguratie en repositorymetadata toe voor ioBroker-publicatie",
+        "fr": "Ajoute l'automatisation des versions, une configuration admin responsive et les metadonnees du depot pour la publication ioBroker",
+        "it": "Aggiunge automazione dei rilasci, configurazione admin responsive e metadati del repository per la pubblicazione ioBroker",
+        "es": "Anade automatizacion de versiones, configuracion de administracion adaptable y metadatos del repositorio para publicar en ioBroker",
+        "pl": "Dodaje automatyzacje wydan, responsywna konfiguracje administratora i metadane repozytorium do publikacji ioBroker",
+        "uk": "Додано автоматизацію релізів, адаптивну конфігурацію адміністратора та метадані репозиторію для публікації ioBroker",
+        "zh-cn": "添加发布自动化、响应式管理配置以及用于 ioBroker 发布的仓库元数据"
+      },
       "0.1.2": {
-        "en": "Updates package metadata for ioBroker adapter checker compatibility",
-        "de": "Aktualisiert Paket-Metadaten fuer die Kompatibilitaet mit dem ioBroker Adapter-Checker",
-        "ru": "Updates package metadata for ioBroker adapter checker compatibility",
-        "pt": "Updates package metadata for ioBroker adapter checker compatibility",
-        "nl": "Updates package metadata for ioBroker adapter checker compatibility",
-        "fr": "Updates package metadata for ioBroker adapter checker compatibility",
-        "it": "Updates package metadata for ioBroker adapter checker compatibility",
-        "es": "Updates package metadata for ioBroker adapter checker compatibility",
-        "pl": "Updates package metadata for ioBroker adapter checker compatibility",
-        "uk": "Updates package metadata for ioBroker adapter checker compatibility",
-        "zh-cn": "Updates package metadata for ioBroker adapter checker compatibility"
+        "en": "Updated package metadata for ioBroker adapter checker compatibility",
+        "de": "Aktualisierte Paket-Metadaten fuer die Kompatibilitaet mit dem ioBroker Adapter-Checker"
       }
     },
     "titleLang": {
@@ -74,12 +78,12 @@
     },
     "dependencies": [
       {
-        "js-controller": ">=5.0.19"
+        "js-controller": ">=6.0.11"
       }
     ],
     "globalDependencies": [
       {
-        "admin": ">=6.0.0"
+        "admin": ">=7.6.20"
       }
     ]
   },
