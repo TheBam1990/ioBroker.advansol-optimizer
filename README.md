@@ -99,7 +99,7 @@ iobroker install iobroker.advansol-optimizer
 From a local package:
 
 ```bash
-iobroker url /path/to/iobroker.advansol-optimizer-0.1.4.tgz
+iobroker url /path/to/iobroker.advansol-optimizer-0.1.5.tgz
 ```
 
 From a project folder:
@@ -121,6 +121,10 @@ After installation, create an instance, enter the bridge host and port, and star
 - Multiple systems on the bus: make sure there is not more than one active master sending frames.
 
 ## Changelog
+
+### 0.1.5
+
+- Fixed remaining adapter checker findings for repository metadata, workflow configuration and admin configuration.
 
 ### 0.1.4
 
@@ -147,5 +151,7 @@ After installation, create an instance, enter the bridge host and port, and star
 - Initial adapter version based on the existing ioBroker JavaScript optimizer script.
 
 ## License
+
+Copyright (c) 2026 TheBam1990
 
 MIT License. See [LICENSE](LICENSE) for details.

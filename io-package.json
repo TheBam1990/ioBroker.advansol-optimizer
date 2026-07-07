@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "advansol-optimizer",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "news": {
+      "0.1.5": {
+        "en": "Fixes remaining adapter checker findings for repository metadata, workflow configuration and admin configuration",
+        "de": "Behebt verbleibende Adapter-Checker-Hinweise fuer Repository-Metadaten, Workflow-Konfiguration und Admin-Konfiguration",
+        "ru": "Исправлены оставшиеся замечания adapter checker для метаданных репозитория, workflow и конфигурации администратора",
+        "pt": "Corrige os itens restantes do adapter checker para metadados do repositorio, workflow e configuracao administrativa",
+        "nl": "Lost resterende adapter-checker meldingen op voor repositorymetadata, workflow en adminconfiguratie",
+        "fr": "Corrige les derniers points du controleur d'adaptateur pour les metadonnees du depot, le workflow et la configuration admin",
+        "it": "Corregge gli ultimi controlli dell'adapter checker per metadati del repository, workflow e configurazione admin",
+        "es": "Corrige los avisos restantes del adapter checker para metadatos del repositorio, workflow y configuracion de administracion",
+        "pl": "Poprawia pozostale uwagi adapter checker dotyczace metadanych repozytorium, workflow i konfiguracji administratora",
+        "uk": "Виправлено решту зауважень adapter checker для метаданих репозиторію, workflow та конфігурації адміністратора",
+        "zh-cn": "修复仓库元数据、工作流配置和管理配置中剩余的 adapter checker 问题"
+      },
       "0.1.4": {
         "en": "Publishes the adapter through the automated GitHub Actions release workflow with npm provenance",
         "de": "Veroeffentlicht den Adapter ueber den automatisierten GitHub-Actions-Release-Workflow mit npm-Provenance",
@@ -31,7 +44,16 @@
       },
       "0.1.2": {
         "en": "Updated package metadata for ioBroker adapter checker compatibility",
-        "de": "Aktualisierte Paket-Metadaten fuer die Kompatibilitaet mit dem ioBroker Adapter-Checker"
+        "de": "Aktualisierte Paket-Metadaten fuer die Kompatibilitaet mit dem ioBroker Adapter-Checker",
+        "ru": "Обновлены метаданные пакета для совместимости с ioBroker adapter checker",
+        "pt": "Metadados do pacote atualizados para compatibilidade com o ioBroker adapter checker",
+        "nl": "Pakketmetadata bijgewerkt voor compatibiliteit met de ioBroker adapter checker",
+        "fr": "Metadonnees du paquet mises a jour pour la compatibilite avec ioBroker adapter checker",
+        "it": "Metadati del pacchetto aggiornati per la compatibilita con ioBroker adapter checker",
+        "es": "Metadatos del paquete actualizados para compatibilidad con ioBroker adapter checker",
+        "pl": "Zaktualizowano metadane pakietu dla zgodnosci z ioBroker adapter checker",
+        "uk": "Оновлено метадані пакета для сумісності з ioBroker adapter checker",
+        "zh-cn": "更新软件包元数据以兼容 ioBroker adapter checker"
       }
     },
     "titleLang": {
