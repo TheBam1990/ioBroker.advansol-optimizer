@@ -23,7 +23,7 @@ jobs:
       - uses: ioBroker/testing-action-check@v1
         with:
           node-version: 24.x
-          lint: false
+          lint: true
 
   adapter-tests:
     needs: check-and-lint
@@ -52,4 +52,3 @@ jobs:
         with:
           node-version: 24.x
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          npm-token: ${{ secrets.NPM_TOKEN }}

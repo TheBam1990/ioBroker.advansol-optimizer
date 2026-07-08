@@ -5,7 +5,6 @@
     "host": {
       "type": "text",
       "label": "Host",
-      "help": "IP address or host name of the TCP RS485 bridge.",
       "newLine": true,
       "xs": 12,
       "sm": 6,
@@ -16,7 +15,6 @@
     "tcpPort": {
       "type": "number",
       "label": "TCP port",
-      "help": "TCP port of the Waveshare ETH-to-RS485 bridge.",
       "min": 1,
       "max": 65535,
       "xs": 12,
@@ -28,7 +26,6 @@
     "pollMs": {
       "type": "number",
       "label": "Polling interval",
-      "help": "Time between polling cycles in milliseconds.",
       "min": 1000,
       "xs": 12,
       "sm": 6,
@@ -39,7 +36,6 @@
     "requestTimeoutMs": {
       "type": "number",
       "label": "Request timeout",
-      "help": "Maximum wait time for a device response in milliseconds.",
       "min": 500,
       "xs": 12,
       "sm": 6,
@@ -50,7 +46,6 @@
     "switchRetries": {
       "type": "number",
       "label": "Switch retries",
-      "help": "Number of repeated switch commands.",
       "min": 1,
       "max": 20,
       "xs": 12,
@@ -62,7 +57,6 @@
     "switchRetryDelayMs": {
       "type": "number",
       "label": "Switch retry delay",
-      "help": "Delay between switch retries in milliseconds.",
       "min": 0,
       "xs": 12,
       "sm": 6,
@@ -73,7 +67,6 @@
     "nightStart": {
       "type": "number",
       "label": "Night mode starts",
-      "help": "Hour when polling is skipped, from 0 to 23.",
       "min": 0,
       "max": 23,
       "xs": 12,
@@ -85,7 +78,6 @@
     "nightEnd": {
       "type": "number",
       "label": "Night mode ends",
-      "help": "Hour when polling resumes, from 0 to 23.",
       "min": 0,
       "max": 23,
       "xs": 12,

@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "advansol-optimizer",
-    "version": "0.1.8",
+    "version": "0.1.9",
     "news": {
+      "0.1.9": {
+        "en": "Prepares the release workflow for trusted publishing and removes untranslated admin help texts",
+        "de": "Bereitet den Release-Workflow fuer Trusted Publishing vor und entfernt nicht uebersetzte Admin-Hilfetexte",
+        "ru": "Готовит release workflow для Trusted Publishing и удаляет непереведенные admin help texts",
+        "pt": "Prepara o release workflow para Trusted Publishing e remove textos de ajuda admin nao traduzidos",
+        "nl": "Bereidt de releaseworkflow voor op Trusted Publishing en verwijdert onvertaalde admin-helpteksten",
+        "fr": "Prepare le release workflow pour Trusted Publishing et supprime les textes d'aide admin non traduits",
+        "it": "Prepara il release workflow per Trusted Publishing e rimuove testi di aiuto admin non tradotti",
+        "es": "Prepara el release workflow para Trusted Publishing y elimina textos de ayuda admin sin traducir",
+        "pl": "Przygotowuje release workflow do Trusted Publishing i usuwa nieprzetlumaczone teksty pomocy admin",
+        "uk": "Готує release workflow для Trusted Publishing і видаляє неперекладені admin help texts",
+        "zh-cn": "为 Trusted Publishing 准备 release workflow 并移除未翻译的管理帮助文本"
+      },
       "0.1.8": {
         "en": "Configures npm token based release publishing for the automated deploy workflow",
         "de": "Konfiguriert die npm-tokenbasierte Veroeffentlichung fuer den automatischen Deploy-Workflow",
@@ -15,32 +28,6 @@
         "pl": "Konfiguruje publikowanie release z npm token dla automatycznego workflow deploy",
         "uk": "Налаштовує публікацію release через npm token для автоматичного deploy workflow",
         "zh-cn": "为自动 deploy 工作流配置基于 npm token 的发布"
-      },
-      "0.1.7": {
-        "en": "Keeps the standard ioBroker test workflow focused on package and integration tests",
-        "de": "Beschraenkt den Standard-ioBroker-Test-Workflow auf Paket- und Integrationstests",
-        "ru": "Оставляет стандартный ioBroker test workflow сфокусированным на package и integration tests",
-        "pt": "Mantem o workflow de testes padrao do ioBroker focado em package e integration tests",
-        "nl": "Houdt de standaard ioBroker testworkflow gericht op package- en integration-tests",
-        "fr": "Garde le workflow de test ioBroker standard centre sur les tests package et integration",
-        "it": "Mantiene il workflow di test standard ioBroker focalizzato su package e integration tests",
-        "es": "Mantiene el workflow de pruebas estandar de ioBroker centrado en package e integration tests",
-        "pl": "Utrzymuje standardowy workflow testowy ioBroker skupiony na testach package i integration",
-        "uk": "Залишає стандартний ioBroker test workflow зосередженим на package та integration tests",
-        "zh-cn": "使标准 ioBroker 测试工作流专注于 package 和 integration 测试"
-      },
-      "0.1.6": {
-        "en": "Switches to the standard ioBroker testing actions and adds repository checker maintenance files",
-        "de": "Stellt auf die Standard-ioBroker-Test-Actions um und ergaenzt Wartungsdateien fuer den Repository-Checker",
-        "ru": "Переходит на стандартные ioBroker testing actions и добавляет файлы обслуживания для repository checker",
-        "pt": "Muda para as actions de teste padrao do ioBroker e adiciona arquivos de manutencao para o repository checker",
-        "nl": "Schakelt over naar de standaard ioBroker testing actions en voegt onderhoudsbestanden voor de repository checker toe",
-        "fr": "Passe aux actions de test ioBroker standard et ajoute les fichiers de maintenance pour le repository checker",
-        "it": "Passa alle action di test standard di ioBroker e aggiunge file di manutenzione per il repository checker",
-        "es": "Cambia a las acciones de prueba estandar de ioBroker y agrega archivos de mantenimiento para el repository checker",
-        "pl": "Przelacza na standardowe akcje testowe ioBroker i dodaje pliki utrzymaniowe dla repository checker",
-        "uk": "Переходить на стандартні ioBroker testing actions і додає файли обслуговування для repository checker",
-        "zh-cn": "切换到标准 ioBroker testing actions 并添加 repository checker 维护文件"
       },
       "0.1.5": {
         "en": "Fixes remaining adapter checker findings for repository metadata, workflow configuration and admin configuration",
