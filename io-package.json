@@ -3,19 +3,6 @@
     "name": "advansol-optimizer",
     "version": "0.1.9",
     "news": {
-      "0.1.9": {
-        "en": "Prepares the release workflow for trusted publishing and removes untranslated admin help texts",
-        "de": "Bereitet den Release-Workflow fuer Trusted Publishing vor und entfernt nicht uebersetzte Admin-Hilfetexte",
-        "ru": "Готовит release workflow для Trusted Publishing и удаляет непереведенные admin help texts",
-        "pt": "Prepara o release workflow para Trusted Publishing e remove textos de ajuda admin nao traduzidos",
-        "nl": "Bereidt de releaseworkflow voor op Trusted Publishing en verwijdert onvertaalde admin-helpteksten",
-        "fr": "Prepare le release workflow pour Trusted Publishing et supprime les textes d'aide admin non traduits",
-        "it": "Prepara il release workflow per Trusted Publishing e rimuove testi di aiuto admin non tradotti",
-        "es": "Prepara el release workflow para Trusted Publishing y elimina textos de ayuda admin sin traducir",
-        "pl": "Przygotowuje release workflow do Trusted Publishing i usuwa nieprzetlumaczone teksty pomocy admin",
-        "uk": "Готує release workflow для Trusted Publishing і видаляє неперекладені admin help texts",
-        "zh-cn": "为 Trusted Publishing 准备 release workflow 并移除未翻译的管理帮助文本"
-      },
       "0.1.8": {
         "en": "Configures npm token based release publishing for the automated deploy workflow",
         "de": "Konfiguriert die npm-tokenbasierte Veroeffentlichung fuer den automatischen Deploy-Workflow",
