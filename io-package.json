@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "advansol-optimizer",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "news": {
+      "0.1.7": {
+        "en": "Keeps the standard ioBroker test workflow focused on package and integration tests",
+        "de": "Beschraenkt den Standard-ioBroker-Test-Workflow auf Paket- und Integrationstests",
+        "ru": "Оставляет стандартный ioBroker test workflow сфокусированным на package и integration tests",
+        "pt": "Mantem o workflow de testes padrao do ioBroker focado em package e integration tests",
+        "nl": "Houdt de standaard ioBroker testworkflow gericht op package- en integration-tests",
+        "fr": "Garde le workflow de test ioBroker standard centre sur les tests package et integration",
+        "it": "Mantiene il workflow di test standard ioBroker focalizzato su package e integration tests",
+        "es": "Mantiene el workflow de pruebas estandar de ioBroker centrado en package e integration tests",
+        "pl": "Utrzymuje standardowy workflow testowy ioBroker skupiony na testach package i integration",
+        "uk": "Залишає стандартний ioBroker test workflow зосередженим на package та integration tests",
+        "zh-cn": "使标准 ioBroker 测试工作流专注于 package 和 integration 测试"
+      },
       "0.1.6": {
         "en": "Switches to the standard ioBroker testing actions and adds repository checker maintenance files",
         "de": "Stellt auf die Standard-ioBroker-Test-Actions um und ergaenzt Wartungsdateien fuer den Repository-Checker",

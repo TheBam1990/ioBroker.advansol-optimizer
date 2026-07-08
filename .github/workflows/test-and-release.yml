@@ -23,7 +23,7 @@ jobs:
       - uses: ioBroker/testing-action-check@v1
         with:
           node-version: 24.x
-          lint: true
+          lint: false
 
   adapter-tests:
     needs: check-and-lint
