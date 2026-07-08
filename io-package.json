@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "advansol-optimizer",
-    "version": "0.1.9",
+    "version": "0.1.8",
     "news": {
       "0.1.8": {
         "en": "Configures npm token based release publishing for the automated deploy workflow",
