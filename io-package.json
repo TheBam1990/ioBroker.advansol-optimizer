@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "advansol-optimizer",
-    "version": "0.1.7",
+    "version": "0.1.8",
     "news": {
+      "0.1.8": {
+        "en": "Configures npm token based release publishing for the automated deploy workflow",
+        "de": "Konfiguriert die npm-tokenbasierte Veroeffentlichung fuer den automatischen Deploy-Workflow",
+        "ru": "Настраивает публикацию release через npm token для автоматического deploy workflow",
+        "pt": "Configura a publicacao de release baseada em npm token para o workflow de deploy automatico",
+        "nl": "Configureert releasepublicatie met npm-token voor de automatische deployworkflow",
+        "fr": "Configure la publication de release avec npm token pour le workflow de deploy automatique",
+        "it": "Configura la pubblicazione release con npm token per il workflow deploy automatico",
+        "es": "Configura la publicacion de release con npm token para el workflow deploy automatico",
+        "pl": "Konfiguruje publikowanie release z npm token dla automatycznego workflow deploy",
+        "uk": "Налаштовує публікацію release через npm token для автоматичного deploy workflow",
+        "zh-cn": "为自动 deploy 工作流配置基于 npm token 的发布"
+      },
       "0.1.7": {
         "en": "Keeps the standard ioBroker test workflow focused on package and integration tests",
         "de": "Beschraenkt den Standard-ioBroker-Test-Workflow auf Paket- und Integrationstests",
