@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "advansol-optimizer",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "news": {
+      "0.1.6": {
+        "en": "Switches to the standard ioBroker testing actions and adds repository checker maintenance files",
+        "de": "Stellt auf die Standard-ioBroker-Test-Actions um und ergaenzt Wartungsdateien fuer den Repository-Checker",
+        "ru": "Переходит на стандартные ioBroker testing actions и добавляет файлы обслуживания для repository checker",
+        "pt": "Muda para as actions de teste padrao do ioBroker e adiciona arquivos de manutencao para o repository checker",
+        "nl": "Schakelt over naar de standaard ioBroker testing actions en voegt onderhoudsbestanden voor de repository checker toe",
+        "fr": "Passe aux actions de test ioBroker standard et ajoute les fichiers de maintenance pour le repository checker",
+        "it": "Passa alle action di test standard di ioBroker e aggiunge file di manutenzione per il repository checker",
+        "es": "Cambia a las acciones de prueba estandar de ioBroker y agrega archivos de mantenimiento para el repository checker",
+        "pl": "Przelacza na standardowe akcje testowe ioBroker i dodaje pliki utrzymaniowe dla repository checker",
+        "uk": "Переходить на стандартні ioBroker testing actions і додає файли обслуговування для repository checker",
+        "zh-cn": "切换到标准 ioBroker testing actions 并添加 repository checker 维护文件"
+      },
       "0.1.5": {
         "en": "Fixes remaining adapter checker findings for repository metadata, workflow configuration and admin configuration",
         "de": "Behebt verbleibende Adapter-Checker-Hinweise fuer Repository-Metadaten, Workflow-Konfiguration und Admin-Konfiguration",

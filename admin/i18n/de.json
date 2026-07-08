@@ -1,0 +1,18 @@
+{
+  "Host": "Host",
+  "IP address or host name of the TCP RS485 bridge.": "IP-Adresse oder Hostname der TCP-RS485-Bridge.",
+  "TCP port": "TCP-Port",
+  "TCP port of the Waveshare ETH-to-RS485 bridge.": "TCP-Port der Waveshare ETH-zu-RS485-Bridge.",
+  "Polling interval": "Abfrageintervall",
+  "Time between polling cycles in milliseconds.": "Zeit zwischen Abfragezyklen in Millisekunden.",
+  "Request timeout": "Anfrage-Timeout",
+  "Maximum wait time for a device response in milliseconds.": "Maximale Wartezeit auf eine Geraeteantwort in Millisekunden.",
+  "Switch retries": "Schaltwiederholungen",
+  "Number of repeated switch commands.": "Anzahl wiederholter Schaltbefehle.",
+  "Switch retry delay": "Schalt-Wartezeit",
+  "Delay between switch retries in milliseconds.": "Wartezeit zwischen Schaltwiederholungen in Millisekunden.",
+  "Night mode starts": "Nachtmodus startet",
+  "Hour when polling is skipped, from 0 to 23.": "Stunde, ab der die Abfrage pausiert wird, von 0 bis 23.",
+  "Night mode ends": "Nachtmodus endet",
+  "Hour when polling resumes, from 0 to 23.": "Stunde, ab der die Abfrage fortgesetzt wird, von 0 bis 23."
+}
