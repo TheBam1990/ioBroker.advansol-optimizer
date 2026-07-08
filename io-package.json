@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "advansol-optimizer",
-    "version": "0.1.8",
+    "version": "0.1.9",
     "news": {
+      "0.1.9": {
+        "en": "Publishes the adapter through npm Trusted Publishing and refreshes repository checker metadata",
+        "de": "Veroeffentlicht den Adapter ueber npm Trusted Publishing und aktualisiert Repository-Checker-Metadaten",
+        "ru": "Публикует адаптер через npm Trusted Publishing и обновляет метаданные repository checker",
+        "pt": "Publica o adaptador via npm Trusted Publishing e atualiza os metadados do repository checker",
+        "nl": "Publiceert de adapter via npm Trusted Publishing en vernieuwt repository checker metadata",
+        "fr": "Publie l'adaptateur via npm Trusted Publishing et actualise les metadonnees du repository checker",
+        "it": "Pubblica l'adapter tramite npm Trusted Publishing e aggiorna i metadati del repository checker",
+        "es": "Publica el adaptador mediante npm Trusted Publishing y actualiza los metadatos del repository checker",
+        "pl": "Publikuje adapter przez npm Trusted Publishing i odswieza metadane repository checker",
+        "uk": "Публікує адаптер через npm Trusted Publishing і оновлює метадані repository checker",
+        "zh-cn": "通过 npm Trusted Publishing 发布适配器并刷新 repository checker 元数据"
+      },
       "0.1.8": {
         "en": "Configures npm token based release publishing for the automated deploy workflow",
         "de": "Konfiguriert die npm-tokenbasierte Veroeffentlichung fuer den automatischen Deploy-Workflow",
