@@ -99,7 +99,7 @@ iobroker install iobroker.advansol-optimizer
 From a local package:
 
 ```bash
-iobroker url /path/to/iobroker.advansol-optimizer-0.1.9.tgz
+iobroker url /path/to/iobroker.advansol-optimizer-0.1.10.tgz
 ```
 
 From a project folder:
@@ -122,10 +122,10 @@ After installation, create an instance, enter the bridge host and port, and star
 
 ## Changelog
 
-### 0.1.9
+### 0.1.10
 
-- Published the adapter through npm Trusted Publishing.
-- Refreshed repository checker metadata.
+- Published the adapter through the npm-token release workflow.
+- Completed repository checker cleanup.
 
 ### 0.1.8
 

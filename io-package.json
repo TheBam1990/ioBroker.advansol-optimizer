@@ -1,20 +1,20 @@
 {
   "common": {
     "name": "advansol-optimizer",
-    "version": "0.1.9",
+    "version": "0.1.10",
     "news": {
-      "0.1.9": {
-        "en": "Publishes the adapter through npm Trusted Publishing and refreshes repository checker metadata",
-        "de": "Veroeffentlicht den Adapter ueber npm Trusted Publishing und aktualisiert Repository-Checker-Metadaten",
-        "ru": "Публикует адаптер через npm Trusted Publishing и обновляет метаданные repository checker",
-        "pt": "Publica o adaptador via npm Trusted Publishing e atualiza os metadados do repository checker",
-        "nl": "Publiceert de adapter via npm Trusted Publishing en vernieuwt repository checker metadata",
-        "fr": "Publie l'adaptateur via npm Trusted Publishing et actualise les metadonnees du repository checker",
-        "it": "Pubblica l'adapter tramite npm Trusted Publishing e aggiorna i metadati del repository checker",
-        "es": "Publica el adaptador mediante npm Trusted Publishing y actualiza los metadatos del repository checker",
-        "pl": "Publikuje adapter przez npm Trusted Publishing i odswieza metadane repository checker",
-        "uk": "Публікує адаптер через npm Trusted Publishing і оновлює метадані repository checker",
-        "zh-cn": "通过 npm Trusted Publishing 发布适配器并刷新 repository checker 元数据"
+      "0.1.10": {
+        "en": "Publishes the adapter with npm token based provenance checks and final repository checker cleanup",
+        "de": "Veroeffentlicht den Adapter mit npm-tokenbasierter Veroeffentlichung und finaler Repository-Checker-Bereinigung",
+        "ru": "Публикует адаптер через npm token и завершает очистку замечаний repository checker",
+        "pt": "Publica o adaptador com npm token e finaliza a limpeza do repository checker",
+        "nl": "Publiceert de adapter met npm-token en rondt de repository-checker opschoning af",
+        "fr": "Publie l'adaptateur avec npm token et finalise le nettoyage du repository checker",
+        "it": "Pubblica l'adapter con npm token e completa la pulizia del repository checker",
+        "es": "Publica el adaptador con npm token y completa la limpieza del repository checker",
+        "pl": "Publikuje adapter z npm token i konczy czyszczenie repository checker",
+        "uk": "Публікує адаптер через npm token і завершує очищення repository checker",
+        "zh-cn": "使用 npm token 发布适配器并完成 repository checker 清理"
       },
       "0.1.8": {
         "en": "Configures npm token based release publishing for the automated deploy workflow",
