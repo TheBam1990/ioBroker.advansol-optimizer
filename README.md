@@ -2,6 +2,8 @@
 
 ioBroker adapter for AdvanSol DCON-WIFI / MRO/MR optimizers connected through a TCP-to-RS485 bridge, for example a Waveshare ETH-to-RS485 adapter.
 
+Product and manufacturer information is available on the [official AdvanSol Power website](https://www.advansol-power.com/).
+
 The adapter is based on the original ioBroker JavaScript script `Advinsol Optimierer2` and moves the logic into a dedicated ioBroker adapter namespace.
 
 ![System overview](docs/images/system-overview.svg)
@@ -78,7 +80,7 @@ Each optimizer gets a channel named `module_1`, `module_2`, `module_3` and so on
 | `module_X.input_current` | Input current | A |
 | `module_X.power` | Power | W |
 | `module_X.energy` | Total energy | kWh |
-| `module_X.temperature` | Temperature | degC |
+| `module_X.temperature` | Temperature | °C |
 | `module_X.raw` | Raw response as hex string |  |
 | `module_X.last_update` | Last module update |  |
 
@@ -87,28 +89,6 @@ Each optimizer gets a channel named `module_1`, `module_2`, `module_3` and so on
 The state `module_X.switch` is writable. Setting it to `true` sends the MOS-on command for the module serial number. Setting it to `false` sends the MOS-off command.
 
 The adapter repeats the command according to `Switch retries` and waits `Switch retry delay` between attempts. This is intentional because TCP-RS485 converters and optimizer modules may not acknowledge every command immediately.
-
-## Installation
-
-From npm:
-
-```bash
-iobroker install iobroker.advansol-optimizer
-```
-
-From a local package:
-
-```bash
-iobroker url /path/to/iobroker.advansol-optimizer-0.1.11.tgz
-```
-
-From a project folder:
-
-```bash
-iobroker url /root/iobroker.advansol-optimizer
-```
-
-After installation, create an instance, enter the bridge host and port, and start the instance.
 
 ## Troubleshooting
 
@@ -121,6 +101,14 @@ After installation, create an instance, enter the bridge host and port, and star
 - Multiple systems on the bus: make sure there is not more than one active master sending frames.
 
 ## Changelog
+
+### 0.1.12
+
+- Fixed all findings from the ioBroker latest-repository review.
+- Added the official AdvanSol manufacturer link and removed direct-install instructions.
+- Changed object names to English and improved state roles and units.
+- Validated all configurable timing values and changed polling to sequential timeouts.
+- Completed all required admin and adapter-description translations.
 
 ### 0.1.11
 

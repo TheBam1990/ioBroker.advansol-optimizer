@@ -20,6 +20,7 @@ class AdvansolOptimizer extends utils.Adapter {
         this.initialized = false;
         this.polling = false;
         this.pollTimer = null;
+        this.stopping = false;
         this.switchSubscriptions = new Set();
 
         this.nightFailLimit = 5;
@@ -35,14 +36,19 @@ class AdvansolOptimizer extends utils.Adapter {
     get cfg() {
         return {
             host: String(this.config.host || "").trim(),
-            tcpPort: Number(this.config.tcpPort || 502),
-            pollMs: Number(this.config.pollMs || 10000),
-            requestTimeoutMs: Number(this.config.requestTimeoutMs || 5000),
-            switchRetries: Number(this.config.switchRetries || 3),
-            switchRetryDelayMs: Number(this.config.switchRetryDelayMs || 4100),
-            nightStart: Number(this.config.nightStart ?? 22),
-            nightEnd: Number(this.config.nightEnd ?? 5),
+            tcpPort: this.boundedNumber(this.config.tcpPort, 502, 1, 65535),
+            pollMs: this.boundedNumber(this.config.pollMs, 10000, 1000, 86400000),
+            requestTimeoutMs: this.boundedNumber(this.config.requestTimeoutMs, 5000, 500, 120000),
+            switchRetries: this.boundedNumber(this.config.switchRetries, 3, 1, 20),
+            switchRetryDelayMs: this.boundedNumber(this.config.switchRetryDelayMs, 4100, 0, 60000),
+            nightStart: this.boundedNumber(this.config.nightStart, 22, 0, 23),
+            nightEnd: this.boundedNumber(this.config.nightEnd, 5, 0, 23),
         };
+    }
+
+    boundedNumber(value, fallback, min, max) {
+        const parsed = Number(value);
+        return Number.isFinite(parsed) ? Math.min(max, Math.max(min, parsed)) : fallback;
     }
 
     async onReady() {
@@ -57,7 +63,7 @@ class AdvansolOptimizer extends utils.Adapter {
 
             await this.connectTcp();
             await this.poll();
-            this.pollTimer = this.setInterval(() => void this.poll(), this.cfg.pollMs);
+            this.scheduleNextPoll();
         } catch (error) {
             this.log.error(`AdvanSol start error: ${error.message}`);
         }
@@ -65,8 +71,9 @@ class AdvansolOptimizer extends utils.Adapter {
 
     onUnload(callback) {
         try {
+            this.stopping = true;
             if (this.pollTimer) {
-                this.clearInterval(this.pollTimer);
+                this.clearTimeout(this.pollTimer);
                 this.pollTimer = null;
             }
             if (this.socket) {
@@ -77,6 +84,17 @@ class AdvansolOptimizer extends utils.Adapter {
         } catch {
             callback();
         }
+    }
+
+    scheduleNextPoll() {
+        if (this.stopping) {
+            return;
+        }
+        this.pollTimer = this.setTimeout(async () => {
+            this.pollTimer = null;
+            await this.poll();
+            this.scheduleNextPoll();
+        }, this.cfg.pollMs);
     }
 
     async onStateChange(id, state) {
@@ -150,8 +168,8 @@ class AdvansolOptimizer extends utils.Adapter {
         return new Promise(resolve => this.setTimeout(resolve, ms));
     }
 
-    async ensureState(id, name, role, type, unit = "", write = false) {
-        await this.setObjectNotExistsAsync(id, {
+    async ensureState(id, name, role, type, unit = "", write = false, states) {
+        await this.extendObjectAsync(id, {
             type: "state",
             common: {
                 name,
@@ -160,13 +178,14 @@ class AdvansolOptimizer extends utils.Adapter {
                 unit,
                 read: true,
                 write,
+                ...(states ? { states } : {}),
             },
             native: {},
         });
     }
 
     async ensureChannel(id, name) {
-        await this.setObjectNotExistsAsync(id, {
+        await this.extendObjectAsync(id, {
             type: "channel",
             common: { name },
             native: {},
@@ -181,30 +200,32 @@ class AdvansolOptimizer extends utils.Adapter {
         await this.ensureChannel("info", "Information");
         await this.ensureState("info.connection", "Connection", "indicator.connected", "boolean");
         await this.ensureChannel("controller", "Controller");
-        await this.ensureState("controller.sn", "Controller Seriennummer", "text", "string");
-        await this.ensureState("module_count", "Anzahl Optimierer", "value", "number");
-        await this.ensureState("last_poll", "Letzter Poll", "date", "string");
-        await this.ensureState("connection", "Verbindungsstatus", "indicator.connected", "boolean");
-        await this.ensureState("night_mode", "Nachtmodus", "indicator", "boolean");
+        await this.ensureState("controller.sn", "Controller Serial Number", "info.serial", "string");
+        await this.ensureState("module_count", "Optimizer Count", "value", "number");
+        await this.ensureState("last_poll", "Last Poll", "date", "string");
+        await this.ensureState("night_mode", "Night Mode", "indicator", "boolean");
+        if (await this.getObjectAsync("connection")) {
+            await this.delObjectAsync("connection");
+        }
     }
 
     async initStatesForModule(index) {
         const base = `module_${index}`;
-        await this.ensureChannel(base, `Optimierer ${index}`);
-        await this.ensureState(`${base}.sn`, "Seriennummer", "text", "string");
-        await this.ensureState(`${base}.switch`, "MOS Ein/Aus", "switch", "boolean", "", true);
-        await this.ensureState(`${base}.mos`, "MOS Status 0=aus 1=ein", "value", "number");
-        await this.ensureState(`${base}.software`, "Softwareversion", "text", "string");
-        await this.ensureState(`${base}.hardware`, "Hardwareversion", "text", "string");
-        await this.ensureState(`${base}.output_voltage`, "Spannung", "value.voltage", "number", "V");
-        await this.ensureState(`${base}.output_current`, "Strom", "value.current", "number", "A");
-        await this.ensureState(`${base}.temperature`, "Temperatur", "value.temperature", "number", "degC");
-        await this.ensureState(`${base}.power`, "Leistung", "value.power", "number", "W");
-        await this.ensureState(`${base}.energy`, "Gesamtertrag", "value.energy", "number", "kWh");
-        await this.ensureState(`${base}.input_voltage`, "Eingangsspannung", "value.voltage", "number", "V");
-        await this.ensureState(`${base}.input_current`, "Eingangsstrom", "value.current", "number", "A");
-        await this.ensureState(`${base}.raw`, "Raw Antwort", "text", "string");
-        await this.ensureState(`${base}.last_update`, "Letzte Aktualisierung", "date", "string");
+        await this.ensureChannel(base, `Optimizer ${index}`);
+        await this.ensureState(`${base}.sn`, "Serial Number", "info.serial", "string");
+        await this.ensureState(`${base}.switch`, "MOS On/Off", "switch", "boolean", "", true);
+        await this.ensureState(`${base}.mos`, "MOS Status", "value", "number", "", false, { 0: "Off", 1: "On" });
+        await this.ensureState(`${base}.software`, "Software Version", "info.firmware", "string");
+        await this.ensureState(`${base}.hardware`, "Hardware Version", "info.hardware", "string");
+        await this.ensureState(`${base}.output_voltage`, "Output Voltage", "value.voltage", "number", "V");
+        await this.ensureState(`${base}.output_current`, "Output Current", "value.current", "number", "A");
+        await this.ensureState(`${base}.temperature`, "Temperature", "value.temperature", "number", "°C");
+        await this.ensureState(`${base}.power`, "Power", "value.power", "number", "W");
+        await this.ensureState(`${base}.energy`, "Total Energy", "value.energy", "number", "kWh");
+        await this.ensureState(`${base}.input_voltage`, "Input Voltage", "value.voltage", "number", "V");
+        await this.ensureState(`${base}.input_current`, "Input Current", "value.current", "number", "A");
+        await this.ensureState(`${base}.raw`, "Raw Response", "text", "string");
+        await this.ensureState(`${base}.last_update`, "Last Update", "date", "string");
     }
 
     connectTcp() {
@@ -226,7 +247,6 @@ class AdvansolOptimizer extends utils.Adapter {
                 this.clearTimeout(connectTimer);
                 this.connected = true;
                 void this.setStateAsync("info.connection", true, true);
-                void this.setVal("connection", true);
                 this.log.info(`AdvanSol connected to ${cfg.host}:${cfg.tcpPort}`);
                 resolve();
             });
@@ -234,14 +254,12 @@ class AdvansolOptimizer extends utils.Adapter {
             this.socket.on("error", err => {
                 this.connected = false;
                 void this.setStateAsync("info.connection", false, true);
-                void this.setVal("connection", false);
                 this.log.warn(`AdvanSol TCP error: ${err.message}`);
             });
 
             this.socket.on("close", () => {
                 this.connected = false;
                 void this.setStateAsync("info.connection", false, true);
-                void this.setVal("connection", false);
                 this.log.warn("AdvanSol TCP connection closed");
             });
 

@@ -1,10 +1,10 @@
 {
   "Host": "Host",
-  "TCP port": "TCP port",
-  "Polling interval": "Polling interval",
-  "Request timeout": "Request timeout",
-  "Switch retries": "Switch retries",
-  "Switch retry delay": "Switch retry delay",
-  "Night mode starts": "Night mode starts",
-  "Night mode ends": "Night mode ends"
+  "TCP port": "TCP-poort",
+  "Polling interval": "Pollinginterval",
+  "Request timeout": "Time-out voor verzoek",
+  "Switch retries": "Schakelpogingen",
+  "Switch retry delay": "Vertraging tussen pogingen",
+  "Night mode starts": "Nachtmodus begint",
+  "Night mode ends": "Nachtmodus eindigt"
 }
