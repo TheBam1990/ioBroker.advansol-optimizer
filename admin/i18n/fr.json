@@ -1,10 +1,10 @@
 {
   "Host": "Host",
-  "TCP port": "TCP port",
-  "Polling interval": "Polling interval",
-  "Request timeout": "Request timeout",
-  "Switch retries": "Switch retries",
-  "Switch retry delay": "Switch retry delay",
-  "Night mode starts": "Night mode starts",
-  "Night mode ends": "Night mode ends"
+  "TCP port": "Port TCP",
+  "Polling interval": "Intervalle d’interrogation",
+  "Request timeout": "Délai d’expiration de la requête",
+  "Switch retries": "Tentatives de commutation",
+  "Switch retry delay": "Délai entre les tentatives",
+  "Night mode starts": "Début du mode nuit",
+  "Night mode ends": "Fin du mode nuit"
 }

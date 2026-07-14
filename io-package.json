@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "advansol-optimizer",
-    "version": "0.1.11",
+    "version": "0.1.12",
     "news": {
+      "0.1.12": {
+        "en": "Fixes all latest-repository review findings, validates timeouts and improves object metadata",
+        "de": "Behebt alle Review-Hinweise, validiert Zeitlimits und verbessert Objektmetadaten",
+        "ru": "Исправлены все замечания проверки, добавлена проверка тайм-аутов и улучшены метаданные объектов",
+        "pt": "Corrige todos os pontos da revisão, valida tempos limite e melhora os metadados dos objetos",
+        "nl": "Lost alle reviewpunten op, valideert time-outs en verbetert objectmetadata",
+        "fr": "Corrige tous les points de la revue, valide les délais et améliore les métadonnées des objets",
+        "it": "Corregge tutti i rilievi della revisione, convalida i timeout e migliora i metadati degli oggetti",
+        "es": "Corrige todos los puntos de la revisión, valida los tiempos de espera y mejora los metadatos de objetos",
+        "pl": "Naprawia wszystkie uwagi z przeglądu, sprawdza limity czasu i ulepsza metadane obiektów",
+        "uk": "Виправлено всі зауваження перевірки, додано перевірку тайм-аутів і покращено метадані об’єктів",
+        "zh-cn": "修复所有审核问题，验证超时设置并改进对象元数据"
+      },
       "0.1.11": {
         "en": "Publishes the adapter with npm provenance and final repository checker cleanup",
         "de": "Veroeffentlicht den Adapter mit npm Provenance und finaler Repository-Checker-Bereinigung",
@@ -98,15 +111,15 @@
     "desc": {
       "en": "Reads and controls AdvanSol DCON-WIFI / MRO/MR optimizers via a TCP RS485 bridge.",
       "de": "Liest und steuert AdvanSol DCON-WIFI / MRO/MR Optimierer ueber eine TCP-RS485-Bridge.",
-      "ru": "Reads and controls AdvanSol DCON-WIFI / MRO/MR optimizers via a TCP RS485 bridge.",
-      "pt": "Reads and controls AdvanSol DCON-WIFI / MRO/MR optimizers via a TCP RS485 bridge.",
-      "nl": "Reads and controls AdvanSol DCON-WIFI / MRO/MR optimizers via a TCP RS485 bridge.",
-      "fr": "Reads and controls AdvanSol DCON-WIFI / MRO/MR optimizers via a TCP RS485 bridge.",
-      "it": "Reads and controls AdvanSol DCON-WIFI / MRO/MR optimizers via a TCP RS485 bridge.",
-      "es": "Reads and controls AdvanSol DCON-WIFI / MRO/MR optimizers via a TCP RS485 bridge.",
-      "pl": "Reads and controls AdvanSol DCON-WIFI / MRO/MR optimizers via a TCP RS485 bridge.",
-      "uk": "Reads and controls AdvanSol DCON-WIFI / MRO/MR optimizers via a TCP RS485 bridge.",
-      "zh-cn": "Reads and controls AdvanSol DCON-WIFI / MRO/MR optimizers via a TCP RS485 bridge."
+      "ru": "Считывает данные и управляет оптимизаторами AdvanSol DCON-WIFI / MRO/MR через мост TCP-RS485.",
+      "pt": "Lê e controla otimizadores AdvanSol DCON-WIFI / MRO/MR através de uma ponte TCP-RS485.",
+      "nl": "Leest en bestuurt AdvanSol DCON-WIFI / MRO/MR-optimizers via een TCP-RS485-bridge.",
+      "fr": "Lit et contrôle les optimiseurs AdvanSol DCON-WIFI / MRO/MR via un pont TCP-RS485.",
+      "it": "Legge e controlla gli ottimizzatori AdvanSol DCON-WIFI / MRO/MR tramite un bridge TCP-RS485.",
+      "es": "Lee y controla optimizadores AdvanSol DCON-WIFI / MRO/MR mediante un puente TCP-RS485.",
+      "pl": "Odczytuje dane i steruje optymalizatorami AdvanSol DCON-WIFI / MRO/MR przez most TCP-RS485.",
+      "uk": "Зчитує дані та керує оптимізаторами AdvanSol DCON-WIFI / MRO/MR через міст TCP-RS485.",
+      "zh-cn": "通过 TCP-RS485 网桥读取和控制 AdvanSol DCON-WIFI / MRO/MR 优化器。"
     },
     "authors": [
       "TheBam1990"

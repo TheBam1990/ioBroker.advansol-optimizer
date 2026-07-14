@@ -1,10 +1,10 @@
 {
-  "Host": "Host",
-  "TCP port": "TCP port",
-  "Polling interval": "Polling interval",
-  "Request timeout": "Request timeout",
-  "Switch retries": "Switch retries",
-  "Switch retry delay": "Switch retry delay",
-  "Night mode starts": "Night mode starts",
-  "Night mode ends": "Night mode ends"
+  "Host": "主机",
+  "TCP port": "TCP 端口",
+  "Polling interval": "轮询间隔",
+  "Request timeout": "请求超时",
+  "Switch retries": "切换重试次数",
+  "Switch retry delay": "切换重试延迟",
+  "Night mode starts": "夜间模式开始",
+  "Night mode ends": "夜间模式结束"
 }
