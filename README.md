@@ -102,6 +102,10 @@ The adapter repeats the command according to `Switch retries` and waits `Switch 
 
 ## Changelog
 
+
+### **WORK IN PROGRESS**
+- (ioBroker-Bot) Adapter requires admin >= 7.8.23 now.
+
 ### 0.1.12
 
 - Fixed all findings from the ioBroker latest-repository review.
