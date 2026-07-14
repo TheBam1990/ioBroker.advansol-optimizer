@@ -160,6 +160,8 @@ The adapter repeats the command according to `Switch retries` and waits `Switch 
 
 Older entries can be moved to [CHANGELOG_OLD.md](CHANGELOG_OLD.md) when the changelog grows.
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## License
 
 Copyright (c) 2026 TheBam1990
