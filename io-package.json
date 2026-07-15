@@ -122,7 +122,7 @@
       "zh-cn": "通过 TCP-RS485 网桥读取和控制 AdvanSol DCON-WIFI / MRO/MR 优化器。"
     },
     "authors": [
-      "TheBam1990"
+      "TheBam <elektrobam@gmx.de>"
     ],
     "keywords": [
       "advansol",

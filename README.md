@@ -166,6 +166,6 @@ Older entries can be moved to [CHANGELOG_OLD.md](CHANGELOG_OLD.md) when the chan
 
 ## License
 
-Copyright (c) 2026 TheBam1990
+Copyright (c) 2026 TheBam
 
 MIT License. See [LICENSE](LICENSE) for details.
