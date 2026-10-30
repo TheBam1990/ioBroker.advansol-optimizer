@@ -1,6 +1,6 @@
 {
   "name": "iobroker.advansol-optimizer",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "ioBroker adapter for AdvanSol DCON-WIFI / MRO/MR optimizers via TCP RS485 bridge",
   "author": "TheBam <elektrobam@gmx.de>",
   "homepage": "https://github.com/TheBam1990/ioBroker.advansol-optimizer",
@@ -47,7 +47,8 @@
     "lint": "node --check main.js",
     "test:package": "mocha test/package --exit",
     "test:integration": "mocha test/integration --exit",
-    "test": "node --check main.js",
+    "test:unit": "node --test test/unit/*.test.js",
+    "test": "node --check main.js && npm run test:unit",
     "translate": "translate-adapter",
     "release": "release-script"
   },

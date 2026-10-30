@@ -18,6 +18,8 @@ class AdvansolOptimizer extends utils.Adapter {
         this.nightMode = false;
         this.nightCheckCounter = 0;
         this.initialized = false;
+        this.lastDiscoveryAttempt = 0;
+        this.discoveryIntervalMs = 5 * 60 * 1000;
         this.polling = false;
         this.pollTimer = null;
         this.stopping = false;
@@ -344,6 +346,7 @@ class AdvansolOptimizer extends utils.Adapter {
 
     request(payload, timeout = this.cfg.requestTimeoutMs) {
         this.requestQueue = this.requestQueue
+            .catch(() => { /* Allow the next request to retry after a failed exchange. */ })
             .then(async () => {
                 await this.reconnectIfNeeded();
                 return this.doRequest(payload, timeout);
@@ -367,22 +370,52 @@ class AdvansolOptimizer extends utils.Adapter {
 
     async readDeviceList(controllerSn) {
         const snBytes = Buffer.from(controllerSn, "hex");
-        const res = await this.request([0x00, 0x42, 0x01, ...snBytes], 2500);
+        const modules = [];
+        const serials = new Set();
+        const indexes = new Set();
+        let pageCount;
+        let totalCount;
 
-        if (!(res.length > 20 && res[0] === 0x01 && res[1] === 0x42)) {
-            throw new Error(`Invalid device list response: ${this.hex(res)}`);
+        // 0x42 returns up to ten devices per page. Header bytes 2/3 contain
+        // the page count/current page; bytes 4..9 contain total/count/length.
+        for (let page = 1; page <= (pageCount ?? 1); page++) {
+            const res = await this.request([0x00, 0x42, page, ...snBytes], 2500);
+            if (res.length !== 256 || res[0] !== 0x01 || res[1] !== 0x42 ||
+                res.readUInt16LE(254) !== this.crc16(res.subarray(0, 254))) {
+                throw new Error(`Invalid device list response for page ${page}: ${this.hex(res)}`);
+            }
+
+            const pages = res[2];
+            const currentPage = res[3];
+            const total = this.u16(res, 4);
+            const count = this.u16(res, 6);
+            const dataLength = this.u16(res, 8);
+            if (pages < 1 || currentPage !== page || page > pages ||
+                count > 24 || dataLength !== count * 10 ||
+                (pageCount !== undefined && (pages !== pageCount || total !== totalCount))) {
+                throw new Error(`Inconsistent device list header for page ${page}`);
+            }
+            pageCount = pages;
+            totalCount = total;
+
+            for (let i = 0; i < count; i++) {
+                const pos = 10 + i * 10;
+                const sn = this.hex(res.subarray(pos, pos + 6));
+                // The last two bytes of each entry are the controller's
+                // device address, also used by the 0x43 measurement request.
+                const index = this.u16(res, pos + 8);
+                if (sn === "FFFFFFFFFFFF" || sn === "000000000000" ||
+                    index === 0 || serials.has(sn) || indexes.has(index)) {
+                    throw new Error(`Invalid or duplicate device on page ${page}, entry ${i + 1}`);
+                }
+                serials.add(sn);
+                indexes.add(index);
+                modules.push({ index, sn });
+            }
         }
 
-        const count = this.u16(res, 6);
-        const modules = [];
-
-        for (let i = 0; i < count; i++) {
-            const pos = 10 + i * 10;
-            if (pos + 6 > res.length) break;
-            const sn = this.hex(res.subarray(pos, pos + 6));
-            if (sn !== "FFFFFFFFFFFF" && sn.length === 12) {
-                modules.push({ index: i + 1, sn });
-            }
+        if (modules.length !== totalCount) {
+            throw new Error(`Incomplete device list: received ${modules.length} of ${totalCount} optimizers`);
         }
 
         await this.setVal("module_count", modules.length);
@@ -417,7 +450,13 @@ class AdvansolOptimizer extends utils.Adapter {
     }
 
     async readModule(index) {
-        const res = await this.request([0x00, 0x43, 0x00, index, 0x00, 0x17], 2500);
+        const res = await this.request([0x00, 0x43, (index >> 8) & 0xff, index & 0xff, 0x00, 0x17], 2500);
+        const expected = this.modules.find(module => module.index === index);
+        if (res.length !== 256 || res[0] !== 0x01 || res[1] !== 0x43 ||
+            res.readUInt16LE(254) !== this.crc16(res.subarray(0, 254)) ||
+            (expected && this.hex(res.subarray(3, 9)) !== expected.sn)) {
+            throw new Error(`Module ${index}: invalid or mismatched measurement response`);
+        }
         await this.parseModuleResponse(index, res);
     }
 
@@ -448,18 +487,20 @@ class AdvansolOptimizer extends utils.Adapter {
     }
 
     async discover() {
+        this.lastDiscoveryAttempt = Date.now();
         const controllerSn = await this.readControllerSn();
         this.log.info(`AdvanSol controller SN: ${controllerSn}`);
 
-        this.modules = await this.readDeviceList(controllerSn);
-        this.log.info(`Found optimizers: ${this.modules.map(m => `${m.index}:${m.sn}`).join(", ")}`);
+        const modules = await this.readDeviceList(controllerSn);
+        this.log.info(`Found optimizers: ${modules.map(m => `${m.index}:${m.sn}`).join(", ")}`);
 
-        for (const m of this.modules) {
+        for (const m of modules) {
             await this.initStatesForModule(m.index);
             await this.setVal(`module_${m.index}.sn`, m.sn);
             await this.registerSwitchHandler(m.index);
         }
 
+        this.modules = modules;
         this.initialized = true;
     }
 
@@ -491,6 +532,12 @@ class AdvansolOptimizer extends utils.Adapter {
         try {
             if (!this.initialized || this.modules.length === 0) {
                 await this.discover();
+            } else if (Date.now() - this.lastDiscoveryAttempt >= this.discoveryIntervalMs) {
+                try {
+                    await this.discover();
+                } catch (error) {
+                    this.log.warn(`Optimizer discovery failed, keeping previous device list: ${error.message}`);
+                }
             }
 
             if (this.nightMode) {

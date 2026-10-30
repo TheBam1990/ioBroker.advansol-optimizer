@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "advansol-optimizer",
-    "version": "0.1.12",
+    "version": "0.1.13",
     "news": {
+      "0.1.13": {
+        "en": "Read all optimizer device-list pages and automatically discover added devices every five minutes",
+        "de": "Liest alle Seiten der Optimiererliste und erkennt zusätzliche Geräte automatisch alle fünf Minuten",
+        "ru": "Читает все страницы списка оптимизаторов и автоматически обнаруживает новые устройства каждые пять минут",
+        "pt": "Lê todas as páginas da lista de otimizadores e detecta novos dispositivos a cada cinco minutos",
+        "nl": "Leest alle pagina’s van de optimizerlijst en detecteert elke vijf minuten automatisch nieuwe apparaten",
+        "fr": "Lit toutes les pages de la liste des optimiseurs et détecte les nouveaux appareils toutes les cinq minutes",
+        "it": "Legge tutte le pagine degli ottimizzatori e rileva automaticamente nuovi dispositivi ogni cinque minuti",
+        "es": "Lee todas las páginas de optimizadores y detecta nuevos dispositivos automáticamente cada cinco minutos",
+        "pl": "Odczytuje wszystkie strony listy optymalizatorów i automatycznie wykrywa nowe urządzenia co pięć minut",
+        "uk": "Читає всі сторінки списку оптимізаторів і автоматично виявляє нові пристрої кожні п’ять хвилин",
+        "zh-cn": "读取优化器设备列表的所有页面，并每五分钟自动发现新增设备"
+      },
       "0.1.12": {
         "en": "Fixes all latest-repository review findings, validates timeouts and improves object metadata",
         "de": "Behebt alle Review-Hinweise, validiert Zeitlimits und verbessert Objektmetadaten",

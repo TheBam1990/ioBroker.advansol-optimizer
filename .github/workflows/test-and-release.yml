@@ -24,6 +24,7 @@ jobs:
         with:
           node-version: 24.x
           lint: true
+      - run: npm run test:unit
 
   adapter-tests:
     needs: check-and-lint
